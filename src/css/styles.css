@@ -5,7 +5,7 @@
 @import url('./animations.css');
 
 /* Sections style */
-@import url('./gallery.css');
-@import url('./feedback.css');
+@import url('./timer.css');
+@import url('./snackbar.css');
 
 

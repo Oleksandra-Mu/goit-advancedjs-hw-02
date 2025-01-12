@@ -1,0 +1,105 @@
+@import url('./container.css');
+@import url('./base.css');
+@import url('./reset.css');
+
+.container form label {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 10px;
+}
+
+.container input[name='delay'] {
+    display: block;
+    width: 344px;
+    height: 40px;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    border: 1px solid #808080;
+    padding: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: var(--animation-hover);
+    transition-property: border-color;
+    margin-bottom: 16px;
+}
+
+.container input[name='delay']:hover {
+    border-color: #000;
+}
+
+.container input[name='delay']:focus {
+    border-color: #4e75ff;
+    outline: none;
+}
+
+.container input[name='delay']:disabled {
+    border-color: #808080;
+    color: #808080;
+    background-color: #fafafa;
+}
+
+.container>form>fieldset {
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #808080;
+}
+
+.container>form>fieldset:hover {
+    border-color: #000;
+}
+
+.container>form>fieldset input {
+    display: inline;
+    width: 32px;
+    height: 32px;
+}
+
+.container>form>fieldset label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #2e2f42;
+    padding: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button {
+    margin-top: 24px;
+    width: 360px;
+    height: 40px;
+    background-color: #4e75ff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    outline: transparent;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+}
+
+button:hover {
+    background-color: #6c8cff;
+    transition: var(--animation-hover);
+    transition-property: background-color;
+}
