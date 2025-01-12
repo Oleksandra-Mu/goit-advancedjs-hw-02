@@ -1,0 +1,11 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --items: 3;
+  --text-color: #2e2f42;
+}
+
+body {
+  font-family: var(--font-family);
+  letter-spacing: 0.04em;
+  color: var(--text-color);
+}
