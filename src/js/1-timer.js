@@ -35,7 +35,6 @@ const options = {
       startButton.disabled = true;
     } else {
       startButton.disabled = false;
-      userSelectedDate = selectedDate;
     }
   },
 };
@@ -68,16 +67,28 @@ function startCountdown(userSelectedDate) {
 
       return;
     }
-
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
+    const { days, hours, minutes, seconds } = convertMs(timeLeft);
     updateTimerDisplay(days, hours, minutes, seconds);
   }, 1000);
+}
+
+function convertMs(ms) {
+  // Number of milliseconds per unit of time
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  // Remaining days
+  const days = Math.floor(ms / day);
+  // Remaining hours
+  const hours = Math.floor((ms % day) / hour);
+  // Remaining minutes
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  // Remaining seconds
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+  return { days, hours, minutes, seconds };
 }
 
 function updateTimerDisplay(days, hours, minutes, seconds) {
